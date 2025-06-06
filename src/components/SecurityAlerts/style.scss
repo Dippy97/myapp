@@ -1,0 +1,38 @@
+.security-alerts-container {
+    .alerts-list {
+        list-style-type: none;
+        padding-left: 0;
+
+        .alert-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: .7rem;
+
+            &.low {
+                .alert-severity {
+                    background-color: #4caf50;
+                }
+            }
+
+            &.medium {
+                .alert-severity {
+                    background-color: #ff9800;
+                }
+            }
+
+            &.high {
+                .alert-severity {
+                    background-color: #f44336;
+                }
+            }
+
+            .alert-severity {
+                font-weight: bold;
+                padding: .5rem;
+                border-radius: 4px;
+            }
+        }
+    }
+}

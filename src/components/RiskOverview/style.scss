@@ -1,0 +1,18 @@
+.risk-overview {
+    .progress-container {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 3rem;
+
+        ul {
+            li{
+                text-align: left;
+                margin: .5rem;
+            }
+            li::marker {
+                color: #a28089;
+            }
+        }
+    }
+}
