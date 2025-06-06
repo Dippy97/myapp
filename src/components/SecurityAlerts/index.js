@@ -1,7 +1,7 @@
 import React from 'react';
 import './style.scss';
 
-const SecurityAlerts = () => {
+const SecurityAlerts = (props) => {
     const alerts =
         [
             {
@@ -27,7 +27,7 @@ const SecurityAlerts = () => {
         ]
 
     return (
-        <div className='section-container security-alerts-container'>
+        <div className={`section-container security-alerts-container ${props.darkMode ? 'dark' : ''}`}>
             <h1>Security Alerts</h1>
             <ul className='alerts-list'>
                 {alerts.map((alert, index) => (

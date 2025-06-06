@@ -4,7 +4,7 @@ import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, Legend, Responsi
 import './style.scss';
 import { useEffect } from 'react';
 
-const InteractiveChart = () => {
+const InteractiveChart = (props) => {
     const [width, setWidth] = React.useState(window.screen.width);
     const data = [
         { name: 'October', IT: 4000, Market: 2400, Finance: 2400 },
@@ -27,7 +27,7 @@ const InteractiveChart = () => {
     }, [window.screen.width]);
 
     return (
-        <div className='section-container interactive-chart'>
+        <div className={`section-container interactive-chart ${props.darkMode ? 'dark' : ''}`}>
             <h2>Interactive Chart for Risk Trends</h2>
             <Box className='chart-container'>
 

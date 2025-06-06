@@ -34,11 +34,11 @@ function CircularProgressWithLabel(props) {
 }
 
 
-const RiskOverview = () => {
+const RiskOverview = (props) => {
     const [progrssBarValue, setProgressBarValue] = React.useState(67);
 
     return (
-        <Box className='section-container risk-overview'>
+        <Box className={`section-container risk-overview ${props.darkMode ? 'dark' : ''}`}>
             <h1>Risk Overview</h1>
             <Typography>This section provides an overview of the risk management status.</Typography>
             <Box className='progress-container'>

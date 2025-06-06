@@ -4,20 +4,29 @@ import RiskOverview from '../components/RiskOverview';
 import ComplienceStatus from '../components/complienceStatus';
 import SecurityAlerts from '../components/SecurityAlerts';
 import InteractiveChart from '../components/InteractiveChart';
-import { Box } from '@mui/material';
+import { Box, Switch } from '@mui/material';
 
 const Dashboard = () => {
+    const [darkMode, setDarkMode] = React.useState(false);
     return (
-        <div className='dashboard-container'>
-            <h1 className='heading'>Dashboard</h1>
+        <div className={`dashboard-container ${darkMode ? 'dark' : ''}`}>
+            <div className='heading'>
+                <h1 >Dashboard</h1>
+                <Switch
+                    checked={darkMode}
+                    onChange={() => setDarkMode(!darkMode)}
+                    name="darkMode"
+                    color="secondary"
+                />
+            </div>
             <Box className='dashboard-content'>
                 <Box>
-                    <RiskOverview />
-                    <SecurityAlerts />
+                    <RiskOverview darkMode = {darkMode} />
+                    <SecurityAlerts darkMode = {darkMode} />
                 </Box>
                 <Box>
-                    <ComplienceStatus />
-                    <InteractiveChart />
+                    <ComplienceStatus darkMode = {darkMode} />
+                    <InteractiveChart darkMode = {darkMode} />
                 </Box>
             </Box>
 

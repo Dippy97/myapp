@@ -2,14 +2,14 @@ import { Typography, LinearProgress, Stack } from '@mui/material';
 import './style.scss';
 import React from 'react';
 
-const ComplienceStatus = () => {
+const ComplienceStatus = (props) => {
     const complianceData = [
         { regulation: 'ISO 27001', status: '55' },
         { regulation: 'SOC 2,', status: '30' },
         { regulation: 'GDPR', status: '95' },
     ];
     return (
-        <div className='section-container compliance-status'>
+        <div className={`section-container compliance-status ${props.darkMode ? 'dark' : ''}`}>
             <h1>Compliance Status</h1>
             <Typography>This section provides an overview of the compliance status across various regulations and standards.</Typography>
             <div className='compliance-status-container'>

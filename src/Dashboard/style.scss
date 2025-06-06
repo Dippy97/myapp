@@ -4,25 +4,38 @@
   flex-direction: column;
   align-items: center;
   background-color: #ebe9e9;
-  .heading{
-    font-size: 24px;
-    color: #f4f4f4;
-    margin: 0px;
+  &.dark{
+    background-color: #aaa9a9;
+  }
+
+  .heading {
+    display: flex;
+    align-items: center;
+    justify-content: center;
     background-color: #a28089;
     width: 100%;
     padding: 1rem 0rem 1rem 0rem;
     text-align: center;
+
+    h1 {
+      font-size: 24px;
+      color: #f4f4f4;
+      margin: 0px;
+
+    }
   }
+
   .dashboard-content {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     padding: 1rem;
     gap: 1rem;
+
     @media screen and (max-width: 1168px) {
-     display: block;
-     max-width: 90%;
-      
+      display: block;
+      max-width: 90%;
+
     }
   }
 }
