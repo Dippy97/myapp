@@ -17,7 +17,7 @@
     "sass": "^1.89.1",
     "web-vitals": "^2.1.4"
   },
-  "homepage": "https://Dippy97.github.io/myapp",
+  "homepage": "https://dippy97.github.io/myapp",
   "scripts": {
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build",
