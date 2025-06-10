@@ -17,7 +17,6 @@
     "sass": "^1.89.1",
     "web-vitals": "^2.1.4"
   },
-  "homepage": "https://dippy97.github.io/myapp",
   "scripts": {
     "predeploy": "npm run build",
     "deploy": "main -d build",
