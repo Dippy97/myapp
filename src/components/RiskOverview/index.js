@@ -35,7 +35,17 @@ function CircularProgressWithLabel(props) {
 
 
 const RiskOverview = (props) => {
-    const [progrssBarValue, setProgressBarValue] = React.useState(67);
+    const [progrssBarValue, setProgressBarValue] = React.useState(0);
+
+    React.useEffect(() => {
+        const fetchData = async () => {
+            await new Promise(resolve => setTimeout(resolve, 1000));
+            setProgressBarValue(65);
+        };
+
+        fetchData();
+    }
+    , []);
 
     return (
         <Box className={`section-container risk-overview ${props.darkMode ? 'dark' : ''}`}>
