@@ -1,11 +1,9 @@
 import React from 'react';
 import { Box, Typography } from '@mui/material';
-import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer, PieChart, Pie, } from 'recharts';
+import { LineChart, Line, XAxis, CartesianGrid, Tooltip, } from 'recharts';
 import './style.scss';
-import { useEffect } from 'react';
 
 const InteractiveChart = (props) => {
-    const [width, setWidth] = React.useState(window.screen.width);
     const data = [
         { name: 'October', IT: 4000, Market: 2400, Finance: 2400 },
         { name: 'November', IT: 3000, Market: 1398, Finance: 2210 },
@@ -15,23 +13,13 @@ const InteractiveChart = (props) => {
         { name: 'March', IT: 2390, Market: 3800, Finance: 2500 },
         { name: 'April', IT: 3490, Market: 4300, Finance: 2100 },
     ];
-    useEffect(() => {
-        const handleResize = () => {
-            setWidth(window.screen.width);
-        };
-
-        window.addEventListener('resize', handleResize);
-        return () => {
-            window.removeEventListener('resize', handleResize);
-        };
-    }, [window.screen.width]);
 
     return (
         <div className={`section-container interactive-chart ${props.darkMode ? 'dark' : ''}`}>
             <h2>Interactive Chart for Risk Trends</h2>
             <Box className='chart-container'>
 
-                <LineChart width={width < 768 ? (width < 360 ? 100 : 280 ) : 500} height={200} data={data} margin={{ top: 5, right: 20, left: 10, bottom: 5 }}>
+                <LineChart width={window.screen.width < 768 ? (window.screen.width < 360 ? 100 : 280 ) : 500} height={200} data={data} margin={{ top: 5, right: 20, left: 10, bottom: 5 }}>
                     <XAxis dataKey="name" />
                     <Tooltip />
                     <CartesianGrid stroke="#f5f5f5" />
