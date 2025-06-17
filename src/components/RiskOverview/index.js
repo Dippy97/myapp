@@ -39,8 +39,20 @@ const RiskOverview = (props) => {
 
     React.useEffect(() => {
         const fetchData = async () => {
-            await new Promise(resolve => setTimeout(resolve, 1000));
-            setProgressBarValue(65);
+            await new Promise(resolve => {
+                fetch('https://myappserver-9q25.onrender.com')
+                    .then(response => response.json())
+                    .then(data => {
+                        setProgressBarValue(data.mediumRisk || 0); 
+                        console.log('Data fetched:', data);
+                        resolve();
+                    })
+                    .catch(error => {
+                        console.error('Error fetching data:', error);
+                        resolve();
+                    });
+            });
+            
         };
 
         fetchData();
